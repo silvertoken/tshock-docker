@@ -15,4 +15,4 @@ This will start the server in interactive mode and allow you to create a world. 
 
 This command will autoload the world named terraria and detach from the process so it runs in the background.
 
-`docker run -dit -p 7777:7777 -v /opt/data/tshock/config:/config -v /opt/data/tshock/logs:/logs -v /opt/data/tshock/world:/world -v /opt/data/tshock/plugins:/plugins --name="terraria" silvertoken/tshock-docker -world /world/terraria.wld`
+`docker run -dit -p 7777:7777 -v /opt/data/tshock/config:/config -v /opt/data/tshock/logs:/logs -v /opt/data/tshock/world:/world -v /opt/data/tshock/plugins:/plugins silvertoken/tshock-docker -world /world/terraria.wld`
