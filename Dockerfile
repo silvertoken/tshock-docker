@@ -19,14 +19,13 @@ RUN yum install -y \
 COPY start.sh /start
 
 # Download and install TShock
-ENV TSHOCK_VERSION=pre1-4.3.21-1.26-2.0.0.9 \
-    TSHOCK_FILE=tshock_mintaka_prere_1
+ENV TSHOCK_VERSION=4.3.23
 
-RUN mkdir /world /config /logs /plugins && \
-	wget https://github.com/NyxStudios/TShock/releases/download/mintaka-$TSHOCK_VERSION/$TSHOCK_FILE.zip && \
-	unzip $TSHOCK_FILE.zip && \
-	rm $TSHOCK_FILE.zip && \
-	mv $TSHOCK_FILE /tshock && \
+RUN mkdir /world /config /logs /plugins /tshock && \
+	cd /tshock && \
+	wget https://github.com/NyxStudios/TShock/releases/download/v$TSHOCK_VERSION/tshock_$TSHOCK_VERSION.zip && \
+	unzip tshock_$TSHOCK_VERSION.zip && \
+	rm tshock_$TSHOCK_VERSION.zip && \
 	chmod +x /tshock/TerrariaServer.exe && \
 	chmod +x /start
 
