@@ -19,7 +19,7 @@ RUN yum install -y \
 COPY start.sh /start
 
 # Download and install TShock
-ENV TSHOCK_VERSION=4.3.23
+ENV TSHOCK_VERSION=4.3.25
 
 RUN mkdir /world /config /logs /plugins /tshock && \
 	cd /tshock && \
